@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Productos
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+          <ion-card *ngFor="let item of productos">
+            <ion-card-header>
+              <ion-card-title>{{item.nombre}} ({{item.precio}}€)</ion-card-title>
+            </ion-card-header>
+  
+            <ion-card-content>
+                <ion-button expand="block" [routerLink]="['/details/',item.id]" routerDirection="forward">Mostrar detalles</ion-button>
+            </ion-card-content>
+  
+          </ion-card>
+          <ion-back-button defaultHref="/home"></ion-back-button>
+        </ion-content>

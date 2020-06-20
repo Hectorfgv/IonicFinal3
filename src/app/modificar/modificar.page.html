@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+      
+    <ion-title>Modificar producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="producto != undefined">
+
+    <div *ngIf="producto.categoria == 'hogar'">
+      <ion-input [(ngModel)]="producto.nombre" [value]="producto.nombre">Nombre: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.descripcion" [value]="producto.descripcion">Descripcion: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.precio" [value]="producto.precio">Precio: </ion-input>
+    </div>
+
+    <div *ngIf="producto.categoria == 'tecnologia'">
+      <ion-input [(ngModel)]="producto.nombre" [value]="producto.nombre">Nombre: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.descripcion" [value]="producto.descripcion">Descripcion: </ion-input>
+      <p></p>
+      <ion-item>
+        <ion-label color="primary">Estado del producto: </ion-label>
+      <ion-select [(ngModel)]="producto.estado" value="producto.estado" okText="Aceptar" cancelText="Cancelar">
+        <ion-select-option value="perfecto">Perfecto</ion-select-option>
+        <ion-select-option value="usado">Usado</ion-select-option>
+      </ion-select>
+    </ion-item>
+      <p></p>
+      <ion-input [(ngModel)]="producto.precio" [value]="producto.precio">Precio: </ion-input>
+    </div>
+
+    <div *ngIf="producto.categoria == 'inmobiliaria'">
+      <ion-input [(ngModel)]="producto.nombre" [value]="producto.nombre">Nombre: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.descripcion" [value]="producto.descripcion">Descripcion: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.metrosCuadrados" [value]="producto.metrosCuadrados">Metros: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.numeroHabitaciones" [value]="producto.numeroHabitaciones">Número de habitaciones: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.numeroBanyos" [value]="producto.numeroBanyos">Número de baños: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.localidad" [value]="producto.localidad">Localidad: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.precio" [value]="producto.precio">Precio: </ion-input>
+    </div>
+
+    <div *ngIf="producto.categoria == 'motor'">
+      <ion-input [(ngModel)]="producto.nombre" [value]="producto.nombre">Nombre: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.descripcion" [value]="producto.descripcion">Descripcion: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.tipo" [value]="producto.tipo">Tipo de vehículo: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.km" [value]="producto.km">KM: </ion-input>
+      <p></p>
+      <ion-input [(ngModel)]="producto.precio" [value]="producto.precio">Precio: </ion-input>
+    </div>
+    <ion-button (click)="modificar(producto.id)">Actualizar</ion-button>
+  </div>
+  <ion-back-button defaultHref="/home"></ion-back-button>
+</ion-content>

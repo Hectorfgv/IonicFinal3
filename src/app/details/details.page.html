@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Detalles
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+          <ion-card >
+            <ion-card-header>
+              <ion-card-title>{{producto.nombre}} ({{producto.precio}}€)</ion-card-title>
+              <ion-label >ID / KEY:</ion-label>{{producto.id}}<br>
+            </ion-card-header>
+  
+            <ion-card-content *ngIf = "producto.categoria == 'tecnologia'">
+                <ion-label >Categoría:</ion-label> {{producto.categoria}}<br>
+                <ion-label >Descripción:</ion-label> {{producto.descripcion}}<br>               
+                <ion-label >Estado:</ion-label> {{producto.estado}}<br>
+            </ion-card-content>
+
+            <ion-card-content *ngIf = "producto.categoria == 'hogar'">
+                <ion-label >Categoría:</ion-label> {{producto.categoria}}<br>
+                <ion-label >Descripción:</ion-label> {{producto.descripcion}}<br>
+            </ion-card-content>
+
+              
+            <ion-card-content *ngIf = "producto.categoria == 'inmobiliaria'">
+                <ion-label >Categoría:</ion-label> {{producto.categoria}}<br>
+                <ion-label >Descripción:</ion-label> {{producto.descripcion}}<br>
+                <ion-label >Metros Cuadrados:</ion-label> {{producto.metrosCuadrados}}<br>
+                <ion-label >Número de baños:</ion-label> {{producto.numeroBanyos}}<br>
+                <ion-label >Número de habitaciones:</ion-label> {{producto.numeroHabitaciones}}<br>
+                <ion-label >Localidad:</ion-label> {{producto.localidad}}<br>
+            </ion-card-content>
+
+              
+            <ion-card-content *ngIf = "producto.categoria == 'motor'">
+                <ion-label >Categoría:</ion-label> {{producto.categoria}}<br>
+                <ion-label >Descripción:</ion-label> {{producto.descripcion}}<br>
+                <ion-label >Tipo:</ion-label> {{producto.tipo}}<br>
+                <ion-label >Año de matriculación:</ion-label> {{producto.anyo}}<br>
+                <ion-label >Kilómetros:</ion-label> {{producto.km}}<br>
+            </ion-card-content>
+  
+          </ion-card>
+  
+        </ion-content>
