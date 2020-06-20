@@ -25,7 +25,6 @@ export class InsertarProductosPage implements OnInit {
 
   oculto : boolean = false;
 
-  rutaMotor : string = "../../assets/motor.jfif"
 
   productos: (IProducto|ITecnologia|IInmobiliaria|IMotor)[] = [];
 

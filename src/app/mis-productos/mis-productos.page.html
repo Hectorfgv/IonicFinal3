@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content>
+  
 
   <ion-select placeholder="Filtrar por categoría" #V (ionChange)="filter(V.value)">
     <ion-select-option value="tecnologia">Tecnología</ion-select-option>
@@ -20,7 +21,7 @@
   <ion-card >
     <ion-card-header>
       <ion-card-title>{{producto.nombre}} ({{producto.precio}}€)</ion-card-title>
-      <ion-label >ID / KEY:</ion-label>{{producto.id}}<br>
+      
     </ion-card-header>
 
     <ion-card-content *ngIf = "producto.categoria == 'tecnologia'">

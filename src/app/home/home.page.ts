@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IProductoUsuarios } from '../interfaces';
+
 import { ProductoService } from '../services/producto.service';
 import { ToastController } from '@ionic/angular';
 
@@ -10,7 +10,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class HomePage {
 
-  productosUsuarios: (IProductoUsuarios)[] = [];
+  
 
 constructor(private _toastCtrl : ToastController,private _productoService : ProductoService){}
 
@@ -25,24 +25,5 @@ async presentToast(total){
 
 ngOnInit(){
 }
-
-countLikes(user){
-  let ref = this._productoService.getProductosUsuarios();
-
-  ref.orderByChild("propietario").equalTo(user).once("value", snapshot => {
-    this.productosUsuarios = [];
-    snapshot.forEach(child => {
-      let value = child.val();
-      this.productosUsuarios.push(value);
-    });
-    let total = this.productosUsuarios.length;
-    this.presentToast(total);
-
-  }
-  );
-
-}
-
-
 
 }

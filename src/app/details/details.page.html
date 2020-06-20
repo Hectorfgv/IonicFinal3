@@ -10,8 +10,7 @@
   
           <ion-card >
             <ion-card-header>
-              <ion-card-title>{{producto.nombre}} ({{producto.precio}}€)</ion-card-title>
-              <ion-label >ID / KEY:</ion-label>{{producto.id}}<br>
+              <ion-card-title>{{producto.nombre}} ({{producto.precio}}€)</ion-card-title>              
             </ion-card-header>
   
             <ion-card-content *ngIf = "producto.categoria == 'tecnologia'">
@@ -45,5 +44,6 @@
             </ion-card-content>
   
           </ion-card>
+          <ion-back-button defaultHref="/home"></ion-back-button>
   
         </ion-content>
